@@ -28,7 +28,7 @@ RUN mkdir -p /home/hadoop/.ssh /home/hadoop/hadoop/logs \
     /home/hadoop/data/namesecondary /home/hadoop/data/tmp && \
     touch /home/hadoop/hadoop/logs/fairscheduler-statedump.log
 
-# We don't care about the skeleton rc files, so overwrite
+# Replace the default rc files 
 COPY config/shellrc /home/hadoop/.bashrc
 COPY config/shellrc /home/hadoop/.profile
 COPY config/id_rsa* /home/hadoop/.ssh/
