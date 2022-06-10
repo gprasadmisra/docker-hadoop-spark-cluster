@@ -35,16 +35,17 @@ cd ../spark
 ```
 6) To build the cluster
 ```bash
-cd ..
 . ./cluster.sh deploy
+```
 
 The script will create the cluster & display Hadoop and Spark admin URLs:
+```css
     Hadoop Namenode @ nodemaster:  http://nodemaster:8088/cluster
     Spark Master    @ nodemaster:  http://nodemaster:8080/
     DFS Health      @ nodemaster:  http://nodemaster:9870/dfshealth.html
 ```
 
-## Options
+## Cluster.sh Switches
 ```bash
 cluster.sh stop   # Stop the cluster
 cluster.sh start  # Start the cluster
