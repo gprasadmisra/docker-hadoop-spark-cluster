@@ -46,7 +46,7 @@ The script will create the cluster & display Hadoop and Spark admin URLs:
 ```
 
 ## Cluster.sh Switches
-```bash
+```yml
 cluster.sh stop   # Stop the cluster
 cluster.sh start  # Start the cluster
 cluster.sh show   # Shows handy URLs of running cluster
