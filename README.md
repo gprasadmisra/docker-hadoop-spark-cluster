@@ -35,6 +35,7 @@ cd ../spark
 ```
 6) To build the cluster
 ```bash
+cd ..
 . ./cluster.sh deploy
 ```
 
