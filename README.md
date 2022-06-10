@@ -35,8 +35,7 @@ cd ../spark
 ```
 6) To build the cluster
 ```bash
-cd ..
-. ./cluster.sh deploy
+. ../cluster.sh deploy
 ```
 
 The script will create the cluster & display Hadoop and Spark admin URLs:
