@@ -44,7 +44,8 @@ USER hadoop
 RUN cat /home/hadoop/hadoop-env.sh >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh
 
 USER root
-RUN chown -R hadoop /home/hadoop/.ssh /home/hadoop/.bashrc /home/hadoop/.profile \
-    /home/hadoop/data /home/hadoop/hadoop-env.sh
+RUN chown -R hadoop:hadoop /home/hadoop/.ssh /home/hadoop/.bashrc /home/hadoop/.profile \
+    /home/hadoop/data /home/hadoop/hadoop-env.sh /home/hadoop/sparkcmd.sh
+RUN chmod +x /home/hadoop/hadoop-env.sh /home/hadoop/sparkcmd.sh
 #ENTRYPOINT ["/home/hadoop/sparkcmd.sh","start"]
 CMD service ssh start && sleep infinity

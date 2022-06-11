@@ -7,7 +7,8 @@ export SPARK_HOME=/home/hadoop/spark
 
 
 
-#export JAVA_HOME=/usr/local/openjdk-8
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export HDFS_NAMENODE_USER=hadoop
 export HDFS_DATANODE_USER=hadoop
 export HDFS_SECONDARYNAMENODE_USER=hadoop
+export PATH=$PATH:/usr/lib/jvm/java-11-openjdk-amd64/bin

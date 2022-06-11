@@ -1,4 +1,5 @@
 #
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 HDFS_NAMENODE_USER=hadoop
 HDFS_DATANODE_USER=hadoop
 HDFS_SECONDARYNAMENODE_USER=hadoop

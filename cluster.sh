@@ -38,8 +38,19 @@ elif [[ $1 == "stop" ]]; then
   # exit
 
 elif [[ $1 == "init" ]]; then
-  docker rm -f `docker ps -a | grep sparkbase | awk '{ print $1 }'` # delete old containers
-  docker network rm sparknet
+  output=$( docker ps -a | grep sparkbase | awk '{ print $1 }' 2> /dev/null )
+  if [[ -z ${output} ]]; then
+    echo "No containers found ..."
+  else
+    docker rm -f `docker ps -a | grep sparkbase | awk '{ print $1 }'` # delete old containers
+  fi
+  output=$( docker network ls | grep sparknet | awk '{ print $1 }' 2> /dev/null )
+  if [[ -z ${output} ]]; then
+    echo "sparknet not found ..."
+  else 
+    docker network rm sparknet
+  fi
+  echo "Creating docker network"
   docker network create --driver bridge sparknet # create custom network
 
   # 3 nodes
@@ -60,8 +71,18 @@ elif [[ $1 == "show" ]]; then
   # exit
 
 elif [[ $1 == "destroy" ]]; then
-  docker rm -f `docker ps -a | grep sparkbase | awk '{ print $1 }'` # delete old containers
-  docker network rm sparknet
+  output=$( docker ps -a | grep node* | awk '{ print $1 }' 2> /dev/null )
+  if [[ -z ${output} ]]; then
+    echo "No containers found ..."
+  else
+    docker rm -f `docker ps -a | grep node* | awk '{ print $1 }'` # delete old containers
+  fi
+  output=$( docker network ls | grep sparknet | awk '{ print $1 }' 2> /dev/null )
+  if [[ -z ${output} ]]; then
+    echo "sparknet not found ..."
+  else 
+    docker network rm sparknet
+  fi
   # exit
 
 else 
